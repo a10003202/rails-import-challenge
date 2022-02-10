@@ -1,0 +1,38 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * JQuery
+ *= require jquery-ui
+ * Bootstrap
+ *= require _bootstrap
+ * FontAwesome
+ *= require @fortawesome/fontawesome-free/css/all
+ * Angular
+ *= require angular-material
+ *= require ui-select
+ *= require angular-ui-select/ui-select.bootstrap4.shim
+ * Components
+ * Node modules
+ *= require dropzone/dist/dropzone
+ * Vendor
+ *= require pace/pace.min
+ *= require simplebar/css/simplebar
+ *= require perfect-scrollbar/css/perfect-scrollbar
+ *= require metismenu/css/metisMenu.min
+ * Rails
+ *= require_self
+ */
+
+/* Fix boostrap-duration-picker hidden class for boostrap 4 */
+.hidden{
+    display: none;
+}

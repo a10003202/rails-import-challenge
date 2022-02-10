@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsStarter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--css file per-controllers -->
+    <%= stylesheet_link_tag params[:controller], media: 'all', 'data-turbolinks-track': 'reload' if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %>
+
+    <!--javascript file per-controllers -->
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

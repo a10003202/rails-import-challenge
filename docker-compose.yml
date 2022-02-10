@@ -1,0 +1,47 @@
+version: '3.8'
+services: 
+  webapp:
+    build: .
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 200M  
+    environment: 
+      - TZ=America/New_York
+      - DEBIAN_FRONTEND=noninteractive
+    volumes:
+      - .:/home/app/ 
+    container_name: inlab_web   
+    command: bundle exec rails s -b 0.0.0.0
+    ports: 
+      - "3000:3000"
+    networks:
+      - net 
+    depends_on: 
+      - db    
+  db:
+    container_name: db
+    image: mysql:5.7
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 200M      
+    restart: always
+    volumes:
+      - mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rails_starter_prod
+      MYSQL_USER: rails_starter_usr
+      MYSQL_PASSWORD: a6tnsG8F5dlEn6
+    ports:
+      - "3307:3306"
+    networks:
+      - net 
+networks:
+  net:
+volumes:
+  mysqldata:
+    driver: local

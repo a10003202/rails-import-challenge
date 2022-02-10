@@ -1,0 +1,19 @@
+<h1>Galleries</h1>
+
+<table class="responsive nowrap table table-hover" id="dttb-galleries" data-sort="true" data-source="<%= url_for(format: :json)%>">
+  <thead>
+    <tr>
+      <th data-data="name">Name</th>
+      <th data-data="file">File</th>
+      <th data-data="image_type">Image type</th>
+      <th data-data="order">Order</th>
+      <th data-data="owner">Owner</th>
+      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+    </tr>
+  </thead>
+
+</table>
+
+<br>
+
+<%= link_to 'New Gallery', new_gallery_path %>

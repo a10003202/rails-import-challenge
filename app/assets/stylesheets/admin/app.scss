@@ -1,0 +1,14 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+@import "components/mixins";
+@import "bootstrap";
+@import "components/datatables";
+//@import "angular-datatables/angular-datatables.min";
+//@import "angular-datatables/plugins/bootstrap/datatables.bootstrap.min";
+
+@import "admin_template/icons";
+@import "admin_template/dark-sidebar";
+@import "admin_template/dark-theme";
+@import "admin_template/app";

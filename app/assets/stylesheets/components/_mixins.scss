@@ -1,0 +1,29 @@
+//Vertical hr
+@mixin vr($color) {
+  .vr {
+    width: 1px; /* Line width */
+    background-color: $color; /* Line color */
+    height: 100%; /* Override in-line if you want specific height. */
+    float: left; /* Causes the line to float to left of content.*/
+  }
+}
+//Text with line------
+@mixin right-hr($text-color, $line-color:$text-color){
+  .right-hr-container {
+    position: relative;
+    overflow: hidden;
+    color: $text-color;
+    font-weight: bolder;
+    &:after {
+      display: inline-block;
+      content: "";
+      height: 2px;
+      background: $line-color;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      margin-top: -2px;
+      margin-left: 10px;
+    }
+  }
+}

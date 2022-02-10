@@ -1,0 +1,9 @@
+//= require admin/admin.module
+//= require components/AbstractService
+//= require components/AbstractController
+//= require components/AbstractDatatablesController
+//= require components/DatatablesConfigBuilder
+//= require components/SwalConfigBuilder
+//= require components/MapController
+//= require galleries
+//= require admin_template/app.js

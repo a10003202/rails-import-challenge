@@ -1,0 +1,41 @@
+defaults: &defaults
+  #configuration websocket server
+  websocket_path: ws://localhost:8080/
+  default_url: localhost:3000
+
+development:
+  <<: *defaults
+  smtp:
+    user_name: ''
+    password: ''
+    address: 'smtp.mailtrap.io'
+    domain: 'smtp.mailtrap.io'
+    port: '2525'
+    authentication: 'cram_md5'
+    from: 'from@example.com'
+
+test:
+  <<: *defaults
+  smtp:
+    user_name: ""
+    password: ""
+    address: ""
+    domain: ""
+    port: "465"
+    authentication: "plain"
+    from: 'from@example.com'
+    enable_starttls_auto: "true"
+    openssl_verify_mode: "none"
+    ssl: "true"
+    tls: "true"
+
+production:
+  <<: *defaults
+  smtp:
+    user_name: ''
+    password: ''
+    address: 'smtp.mailtrap.io'
+    domain: 'smtp.mailtrap.io'
+    port: '2525'
+    authentication: 'cram_md5'
+    from: 'from@example.com'
