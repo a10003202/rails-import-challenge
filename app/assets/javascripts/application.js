@@ -28,6 +28,7 @@
 //= require ui-bootstrap4/dist/ui-bootstrap
 //= require ui-bootstrap4/dist/ui-bootstrap-tpls
 //= require angular-datatables/angular-datatables.min
+//= require ng-file-upload/dist/ng-file-upload-all
 // Components
 //= require components/datatables
 // Node modules

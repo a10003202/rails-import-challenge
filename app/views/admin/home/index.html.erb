@@ -1,2 +1,17 @@
-<h1>Admin::Home#index</h1>
-<p>Find me in app/views/admin/home/index.html.erb</p>
+<div ng-controller="HomeController">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h1 class="mb-0"><%= t('.home') %></h1>
+      </div>
+      <hr/>
+      <div ng-init="model.total_revenue_now = <%= Purchase.all.sum(:total_price) %>">
+        <button ng-click="openModalImport()" class="btn btn-primary">Importar</button>
+        <br>
+        <br>
+        <h4>Total de ingresos a la fecha: {{model.total_revenue_now | currency}}</h4>
+      </div>
+    </div>
+  </div>
+  <%= render 'admin/home/modal_import' %>
+</div>

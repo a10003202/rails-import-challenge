@@ -18,6 +18,11 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     get 'home' => 'home#index'
+    resources :home do
+      collection do
+        post 'import_purchases' => 'home#import_purchases'
+      end
+    end
     resources :users do
       collection do
         get 'search' => 'users#search'

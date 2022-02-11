@@ -3,34 +3,102 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+### Things you may want to cover:
 
 * Ruby version
-  
-    - 2.5.1
+
+  - 2.5.1
 
 * System dependencies
 
-* Configuration
+  - MySql 8.0.25
 
-  - bundle install
-  - yarn install
+## Install
 
-* Database creation
+### Clone the repository
 
-  - rake db:create
+```shell
+git clone git@github.com:a10003202/rails-import-challenge.git
+cd rails-import-challenge
+```
+### Check your Ruby version
 
-* Database initialization
+```shell
+ruby -v
+```
 
-  - rake db:migrate
-  - rake db:seed
+The output should start with something like `ruby 2.5.1`
 
-* How to run the test suite
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
-  - rails test
+```shell
+rbenv install 2.5.1
+```
+### Install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
 
-* Deployment instructions
+```shell
+bundle && yarn
+```
 
-* ...
+### Database creation
+```shell
+  rake db:create
+```
+
+### Database initialization
+```shell
+  rake db:migrate
+  rake db:seed
+```
+
+### Compile assets
+```shell
+  rake assets:precompile
+```
+
+### Add heroku remotes
+
+Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):
+
+```shell
+heroku git:remote -a rails-import-challenge
+heroku git:remote --remote heroku-staging -a rails-import-challenge-staging
+```
+
+## Serve
+
+```shell
+rails s
+```
+
+
+## Run tests
+```shell
+  rails test
+```
+
+## Deployment instructions
+
+### With Heroku pipeline (recommended)
+
+Push to Heroku staging remote:
+
+```shell
+git push heroku-staging
+```
+
+Go to the Heroku Dashboard and [promote the app to production](https://devcenter.heroku.com/articles/pipelines) or use Heroku CLI:
+
+```shell
+heroku pipelines:promote -a rails-import-challenge-staging
+```
+
+### Directly to production (not recommended)
+
+Push to Heroku production remote:
+
+```shell
+git push heroku
+```

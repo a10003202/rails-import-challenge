@@ -4,8 +4,6 @@ var module = angular.module("ModuleAdmin",
         'ui.select',
         'ui.bootstrap',
         'ngMessages',
-        'ngMap',
-        'thatisuday.dropzone',
         'ngFileUpload'
     ]
 );
