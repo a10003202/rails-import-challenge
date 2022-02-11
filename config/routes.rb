@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :home do
       collection do
         post 'import_purchases' => 'home#import_purchases'
+        get 'import_example' => 'home#download_import_example'
       end
     end
     resources :users do

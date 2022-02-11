@@ -2,11 +2,11 @@
   <div class="card">
     <div class="card-body">
       <div class="card-title">
-        <h1 class="mb-0"><%= t('.home') %></h1>
+        <h1 class="mb-0">Ingresos</h1>
       </div>
       <hr/>
       <div ng-init="model.total_revenue_now = <%= Purchase.all.sum(:total_price) %>">
-        <button ng-click="openModalImport()" class="btn btn-primary">Importar</button>
+        <button ng-click="openModalImport()" class="btn btn-primary">Importar Excel</button>
         <br>
         <br>
         <h4>Total de ingresos a la fecha: {{model.total_revenue_now | currency}}</h4>

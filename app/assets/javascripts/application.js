@@ -45,3 +45,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_self
+
+window.swal = function (...args) {
+    return Swal.fire(...args);
+};

@@ -171,7 +171,7 @@ function HomeController($scope, $controller, URL_ROOT, LOCALE, HomeService, Swal
             var message = 'Información guardada exitosamente.'
             message += '<br> Los ingresos totales fueron de: ' + total_revenue_formatted;
             var swal_config = SwalConfigBuilder.buildSuccessNotificationConfig({html: message});
-            Swal.fire(swal_config).then(function (result) {
+            swal(swal_config).then(function (result) {
                 $scope.closeModal();
             });
             $scope.saving = false;

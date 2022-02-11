@@ -11,8 +11,8 @@ services:
       - TZ=America/New_York
       - DEBIAN_FRONTEND=noninteractive
     volumes:
-      - .:/home/app/ 
-    container_name: inlab_web   
+      - .:/home/app/
+    container_name: rails_import_challenge_web
     command: bundle exec rails s -b 0.0.0.0
     ports: 
       - "3000:3000"
@@ -33,8 +33,8 @@ services:
       - mysqldata:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: rails_starter_prod
-      MYSQL_USER: rails_starter_usr
+      MYSQL_DATABASE: rails_import_challenge_prod
+      MYSQL_USER: rails_import_challenge_usr
       MYSQL_PASSWORD: a6tnsG8F5dlEn6
     ports:
       - "3307:3306"

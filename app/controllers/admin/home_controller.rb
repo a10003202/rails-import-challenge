@@ -12,4 +12,12 @@ class Admin::HomeController < ApplicationController
     end
   end
 
+  def download_import_example
+
+    send_file(
+      "#{Rails.root}/app/assets/example.tab.xlsx",
+      filename: "example.tab.xlsx"
+    )
+  end
+
 end

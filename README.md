@@ -21,6 +21,14 @@ application up and running.
 git clone git@github.com:a10003202/rails-import-challenge.git
 cd rails-import-challenge
 ```
+
+Note: If you use [Docker Compose](https://docs.docker.com/compose/install/) you must follow next steps:
+
+  - Build image with: docker-compose build
+  - Change database.yml host to db
+  - Start container with: docker-compose up
+  - Follow steps starting from Database creation prepending to the commands 'docker-compose run --rm webapp'. Example: docker-compose run --rm webapp rake db:create
+
 ### Check your Ruby version
 
 ```shell
@@ -73,6 +81,15 @@ heroku git:remote --remote heroku-staging -a rails-import-challenge-staging
 rails s
 ```
 
+# Login
+
+Open in browser http://localhost:3000/login if running the project locally or http://your-domain.com/login for production environments.
+You can login with the default admin user credentials:
+
+```shell
+  email: admin@email.com
+  password: admin
+```
 
 ## Run tests
 ```shell
